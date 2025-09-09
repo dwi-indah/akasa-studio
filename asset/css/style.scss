@@ -54,6 +54,11 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
+    margin: 0;
+}
+
+p {
+    margin: 0;
 }
 
 iframe,video {
@@ -136,6 +141,38 @@ main {
     padding-top: 100px;
 }
 
+.iconOrnament {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-image: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(%23clip0_28_20)"><path d="M42.3383 90.5723L45.0966 56.9218L17.7494 75.9658L10.0967 62.5188L40.7237 49.2064L10.4102 35.8998L17.7158 22.9454L45.3684 42.1827L42.4067 8.51208L57.3666 8.56467L53.9483 42.2129L81.5154 23.1697L88.5105 35.9543L58.1028 49.4875L88.6354 63.0149L81.3298 75.9693L53.8965 56.9528L56.8582 90.6234L42.3383 90.5723Z" fill="black"/></g><defs><clipPath id="clip0_28_20"><rect width="100" height="100" fill="white"/></clipPath></defs></svg>');
+    background-size: 10px;
+    margin-right: 4px;
+}
+
+.tagline {
+    border-radius: 50px;
+    padding: 8px 16px;
+    width: fit-content;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 24px;
+    &.primary {
+        background: var(--cl-cream);
+        color: var(--cl-orange);
+        .iconOrnament {
+            filter: invert(39%) sepia(82%) saturate(4260%) hue-rotate(14deg) brightness(96%) contrast(101%);
+        }
+    }
+    &.secondary {
+        background: var(--cl-black);
+        color: var(--cl-white);
+        .iconOrnament {
+            filter: invert(100%) sepia(0%) saturate(7492%) hue-rotate(334deg) brightness(106%) contrast(99%);
+        }
+    }
+}
+
 .hero {
     min-height: 100vh;
     &Wrap {
@@ -169,8 +206,9 @@ main {
         &-desc {
             a {
                 h2 {
-                font-size: 16px;
-                margin: 0;
+                    font-size: 16px;
+                    margin: 0;
+                    line-height: 1;
             }
                 p {
                     font-size: 14px;
@@ -180,4 +218,119 @@ main {
             }
         }
     }
+}
+
+.about {
+    background: var(--cl-black);
+    color: var(--cl-white);
+    &Wrap {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+    &Title {
+        font-weight: 800;
+        font-size: 24px;
+        max-width: 400px;
+        line-height: 150%;
+    }
+
+    &Desc {
+        display: flex;
+        flex-direction: column;
+        @media(min-width:$screen-tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &Client {
+        max-width: 400px;
+        flex-shrink: 0;
+        display: flex;
+        gap: 40px;
+        align-self: flex-end;
+        &-item {
+            h2 {
+                font-family: var(--font-display);
+                font-size: 64px;
+                span {
+                    font-size: 24px;
+                    vertical-align: super;
+                }
+            }
+        }
+    }
+
+    &Detail {
+        max-width: 550px;
+        p {
+            &:first-of-type {
+                font-weight: 600;
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+
+.service {
+    &Wrap {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    &Title{
+        font-weight: 800;
+        font-size: 24px;
+        // max-width: 600px;
+        line-height: 150%;
+    }
+
+    &List {
+        margin-top: 24px;
+    }
+    &Item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-top: 1px solid var(--cl-black);
+        padding-top: 16px;
+        @media(min-width:$screen-tablet) {
+            flex-direction: row;
+        }
+
+        &-title {
+            font-size: 32px;
+            text-transform: uppercase;
+            @media(min-width:$screen-tablet) {
+                max-width: 400px;
+                flex-shrink: 0;
+            }
+        }
+
+        &-desc {
+            padding: 32px 0;
+            max-width: 400px;
+            font-size: 18px;
+        }
+
+        &-price {
+            margin: 32px 0 16px;
+            span {
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+        }
+
+        &-button {
+            border: 1px solid var(--cl-black);
+            padding: 8px 16px;
+            border-radius: 50px;
+        }
+    }
+}
+
+.contact {
+    background: var(--cl-black);
+    color: var(--cl-white);
+    
 }
