@@ -5,6 +5,7 @@
   --cl-orange: #D75300;
   --cl-black: #262424;
   --cl-white: #ffffff;
+  --cl-gray: #535366;
 }
 
 *,
@@ -36,6 +37,10 @@ img {
   vertical-align: top;
   -ms-interpolation-mode: bicubic;
   border-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
 }
 
 iframe, video {
@@ -114,4 +119,52 @@ input:focus:-moz-placeholder, input:focus:-ms-input-placeholder, input:focus::-m
   width: 16px;
   height: 2px;
   background: var(--cl-black);
+}
+
+main {
+  padding-top: 100px;
+}
+
+.hero {
+  min-height: 100vh;
+}
+.heroWrap {
+  display: flex;
+  flex-direction: column;
+}
+.heroTitle {
+  font-size: clamp(48px, 10vw, 96px);
+  margin: 90px 0 30px;
+  line-height: 105%;
+}
+.heroTitle span {
+  font-family: var(--font-display);
+  color: var(--cl-orange);
+  font-style: italic;
+}
+.heroDesc {
+  font-size: 16px;
+  margin-bottom: 60px;
+}
+@media (min-width: 768px) {
+  .heroDesc {
+    max-width: 467px;
+  }
+}
+.heroOrder {
+  display: flex;
+  gap: 8px;
+}
+.heroOrder-img {
+  width: auto;
+  height: 32px;
+}
+.heroOrder-desc a h2 {
+  font-size: 16px;
+  margin: 0;
+}
+.heroOrder-desc a p {
+  font-size: 14px;
+  color: var(--cl-gray);
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
